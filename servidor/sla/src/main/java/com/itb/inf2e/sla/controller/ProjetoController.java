@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600, allowCredentials = "false")
-@RequestMapping("/projeto")
+@RequestMapping("/Projeto")
 public class ProjetoController {
 
     // Injeção de dependência do repositório de Projeto
@@ -25,7 +25,8 @@ public class ProjetoController {
     // ROTA POST - Salva um novo projeto
     @PostMapping
     public ResponseEntity<Projeto> saveProjeto(@RequestBody Projeto projeto) {
-        Projeto savedProjeto = projetoRepository.save(projeto);
+        Projeto Projeto = null;
+        Projeto savedProjeto = projetoRepository.save(Projeto);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedProjeto);
     }
 

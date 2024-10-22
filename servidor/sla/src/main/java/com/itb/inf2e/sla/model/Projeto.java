@@ -2,39 +2,29 @@ package com.itb.inf2e.sla.model;
 
 import jakarta.persistence.*;
 
-
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name = "projeto")
+@Table(name = "Projeto")
 public class Projeto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_projeto")
-    private Long idProjeto;
-
-    @Column(name = "nome")
-    private String nome;
-
-    @Column(name = "descricao")
-    private String descricao;
-
-    @Column(name = "proposta")
-    private String proposta;
-
-    @Column(name = "integrantes")
-    private String integrantes;
-
-    @Column(name = "data_criacao")
-    private LocalDateTime dataCriacao = LocalDateTime.now();
-
-    @Column(name = "cod_status")
-    private boolean codStatus;
+    @Column(name = "id") // Alinhado com a tabela SQL
     private Long id;
+
+    @Column(name = "Nome_projeto", nullable = false, length = 45) // Alinhado com a tabela SQL
     private String nomeProjeto;
 
+    @Column(name = "Integrantes", nullable = false, length = 45) // Alinhado com a tabela SQL
+    private String integrantes;
+
+    @Column(name = "Proposta", nullable = false, length = 225) // Alinhado com a tabela SQL
+    private String proposta;
+
     // Construtores
+    public Projeto() {
+        // Construtor padrão
+    }
+
     public Projeto(Long id, String nomeProjeto, String integrantes, String proposta) {
         this.id = id;
         this.nomeProjeto = nomeProjeto;
@@ -48,42 +38,21 @@ public class Projeto {
         this.proposta = proposta;
     }
 
-    public Projeto() {
-
-    }
-
     // Getters e Setters
-
-    public Long getIdProjeto() {
-        return idProjeto;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdProjeto(Long idProjeto) {
-        this.idProjeto = idProjeto;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeProjeto() {
+        return nomeProjeto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getProposta() {
-        return proposta;
-    }
-
-    public void setProposta(String proposta) {
-        this.proposta = proposta;
+    public void setNomeProjeto(String nomeProjeto) {
+        this.nomeProjeto = nomeProjeto;
     }
 
     public String getIntegrantes() {
@@ -94,27 +63,11 @@ public class Projeto {
         this.integrantes = integrantes;
     }
 
-    public LocalDateTime getDataCriacao() {
-        return dataCriacao;
+    public String getProposta() {
+        return proposta;
     }
 
-    public void setDataCriacao(LocalDateTime dataCriacao) {
-        this.dataCriacao = dataCriacao;
-    }
-
-    public boolean isCodStatus() {
-        return codStatus;
-    }
-
-    public void setCodStatus(boolean codStatus) {
-        this.codStatus = codStatus;
-    }
-
-    public boolean validarProjeto() {
-        return false;
-    }
-
-    public Object getMensagemErro() {
-        return null;
+    public void setProposta(String proposta) {
+        this.proposta = proposta;
     }
 }
