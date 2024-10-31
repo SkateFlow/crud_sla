@@ -8,16 +8,15 @@ public class Projeto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") // Alinhado com a tabela SQL
     private Long id;
 
-    @Column(name = "Nome_projeto", nullable = false, length = 45) // Alinhado com a tabela SQL
+    @Column(name = "Nomeprojeto", nullable = false)
     private String nomeProjeto;
 
-    @Column(name = "Integrantes", nullable = false, length = 45) // Alinhado com a tabela SQL
+    @Column(name = "Integrantes", nullable = false)
     private String integrantes;
 
-    @Column(name = "Proposta", nullable = false, length = 225) // Alinhado com a tabela SQL
+    @Column(name = "Proposta", nullable = false)
     private String proposta;
 
     // Construtores
@@ -25,18 +24,7 @@ public class Projeto {
         // Construtor padrão
     }
 
-    public Projeto(Long id, String nomeProjeto, String integrantes, String proposta) {
-        this.id = id;
-        this.nomeProjeto = nomeProjeto;
-        this.integrantes = integrantes;
-        this.proposta = proposta;
-    }
 
-    public Projeto(String nomeProjeto, String integrantes, String proposta) {
-        this.nomeProjeto = nomeProjeto;
-        this.integrantes = integrantes;
-        this.proposta = proposta;
-    }
 
     // Getters e Setters
     public Long getId() {
