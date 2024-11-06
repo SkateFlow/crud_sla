@@ -10,13 +10,13 @@ public class Projeto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Nomeprojeto", nullable = false)
+    @Column(name = "nome_projeto", nullable = false)
     private String nomeProjeto;
 
-    @Column(name = "Integrantes", nullable = false)
+    @Column(name = "integrantes", nullable = false)
     private String integrantes;
 
-    @Column(name = "Proposta", nullable = false)
+    @Column(name = "proposta", nullable = false)
     private String proposta;
 
     // Construtores
@@ -58,4 +58,6 @@ public class Projeto {
     public void setProposta(String proposta) {
         this.proposta = proposta;
     }
+
+
 }
